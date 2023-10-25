@@ -1,0 +1,13 @@
+services:
+  nginx:
+    image: nginx:1.25.3
+    ports:
+      - "8080:80"
+    volumes:
+      - ./files/nginx/etc/nginx/conf.d/:/etc/nginx/conf.d/:ro
+  api:
+    image: docker-nginx-sandbox-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./files/api/main.py:/app/src/main.py:ro
