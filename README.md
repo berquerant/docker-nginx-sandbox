@@ -37,4 +37,4 @@ Commercial support is available at
 "Hello!"
 ```
 
-Rewrite as you like [nginx config](files/nginx/etc/nginx/conf.d/default.conf) and [API main.py](files/api/main.py).
+Rewrite as you like [nginx config](files/nginx/etc/nginx/) and [API main.py](files/api/main.py).

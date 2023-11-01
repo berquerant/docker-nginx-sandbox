@@ -13,3 +13,7 @@ services:
       - "8000:8000"
     volumes:
       - ./files/api/main.py:/app/src/main.py:ro
+  httpbin:
+    image: kennethreitz/httpbin
+    ports:
+      - "8030:80"
