@@ -104,7 +104,7 @@
         "pipenv==(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
       "depNameTemplate": "pipenv",
-      "datasourceTemlpate": "pypi",
+      "datasourceTemplate": "pypi",
       "versioningTemplate": "python"
     },
     {
