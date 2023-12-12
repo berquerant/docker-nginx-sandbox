@@ -1,0 +1,138 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":label(renovate)",
+    ":prConcurrentLimitNone",
+    ":prHourlyLimitNone",
+    ":timezone(Asia/Tokyo)",
+    ":rebaseStalePrs",
+    ":disableDependencyDashboard"
+  ],
+  "automerge": false,
+  "baseBranches": [
+    "main"
+  ],
+  "rangeStrategy": "auto",
+  "pin": {
+    "addLabels": [
+      "pin"
+    ]
+  },
+  "patch": {
+    "addLabels": [
+      "patch"
+    ]
+  },
+  "minor": {
+    "addLabels": [
+      "minor"
+    ]
+  },
+  "major": {
+    "addLabels": [
+      "major"
+    ]
+  },
+  "packageRules": [
+    {
+      "groupName": "github-actions",
+      "addLabels": [
+        "github-actions"
+      ],
+      "matchManagers": [
+        "github-actions"
+      ]
+    },
+    {
+      "addLabels": [
+        "pipenv"
+      ],
+      "matchManagers": [
+        "pipenv"
+      ]
+    },
+    {
+      "addLabels": [
+        "pipenv"
+      ],
+      "matchDepNames": [
+        "pipenv"
+      ]
+    },
+    {
+      "groupName": "api",
+      "addLabels": [
+        "api"
+      ],
+      "matchFileNames": [
+        "files/api/**"
+      ]
+    },
+    {
+      "addLabels": [
+        "docker"
+      ],
+      "matchDatasources": [
+        "docker"
+      ]
+    },
+    {
+      "addLabels": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "(^|/)Dockerfile$"
+      ]
+    },
+    {
+      "groupName": "hadolint",
+      "addLabels": [
+        "hadolint"
+      ],
+      "matchDepPatterns": [
+        "hadolint"
+      ]
+    }
+  ],
+  "customManagers": [
+    {
+      "fileMatch": [
+        "^Dockerfile$"
+      ],
+      "matchStrings": [
+        "pipenv==(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "depNameTemplate": "pipenv",
+      "datasourceTemlpate": "pypi",
+      "versioningTemplate": "python"
+    },
+    {
+      "fileMatch": [
+        "^Dockerfile$"
+      ],
+      "matchStrings": [
+        "FROM (?<depName>.*?):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": [
+        "^docker-compose.yml$"
+      ],
+      "matchStrings": [
+        "image (?<depName>.*?):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": [
+        "^Makefile$"
+      ],
+      "matchStrings": [
+        ".*_IMAGE = (?<depName>.*?):(?<currentValue>.*?)"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
