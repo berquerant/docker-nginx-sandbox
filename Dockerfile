@@ -3,6 +3,7 @@ FROM python:3.12.0-bookworm@sha256:ebfe61739a0e0c937dfe998a9838dcf5aa2a27700d63d
 WORKDIR /app/src
 
 COPY files/api/Pipfile Pipfile
+COPY files/api/Pipfile.lock Pipfile.lock
 
 RUN pip install --no-cache-dir pipenv==2023.10.24 \
     && pipenv install

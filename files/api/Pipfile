@@ -11,4 +11,3 @@ fastapi = "0.104.0"
 
 [requires]
 python_version = "3.12"
-python_full_version = "3.12.0"
