@@ -13,6 +13,8 @@ lint: docker-hadolint-debian
 sandbox: $(SANDBOX_DOCKERFILE)
 	docker build --tag $(SANDBOX_IMAGE) -f $< .
 
+HADOLINT_IMAGE = hadolint/hadolint:v2.12.0-debian
+
 .PHONY: docker-hadolint-debian
 docker-hadolint-debian:
-	docker run --rm -i -v $(PWD)/.hadolint.yml:/.config/hadolint.yml hadolint/hadolint:v2.12.0-debian hadolint --config /.config/hadolint.yml - < $(SANDBOX_DOCKERFILE)
+	docker run --rm -i -v $(PWD)/.hadolint.yml:/.config/hadolint.yml $(HADOLINT_IMAGE) hadolint --config /.config/hadolint.yml - < $(SANDBOX_DOCKERFILE)
