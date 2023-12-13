@@ -36,6 +36,12 @@
   },
   "packageRules": [
     {
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
       "groupName": "github-actions",
       "addLabels": [
         "github-actions"
