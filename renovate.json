@@ -10,7 +10,7 @@
     ":disableDependencyDashboard",
     ":automergePatch"
   ],
-  "automerge": false,
+  "platformAutomerge": true,
   "baseBranches": [
     "main"
   ],
