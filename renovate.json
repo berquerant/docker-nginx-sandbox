@@ -8,6 +8,7 @@
     ":rebaseStalePrs",
     ":disableDependencyDashboard",
     ":automergePatch",
+    ":automergeDigest",
     "schedule:nonOfficeHours"
   ],
   "prConcurrentLimit": 3,
