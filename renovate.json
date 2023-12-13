@@ -9,7 +9,7 @@
     ":disableDependencyDashboard",
     ":automergePatch",
     ":automergeDigest",
-    "schedule:nonOfficeHours"
+    "schedule:weekends"
   ],
   "prConcurrentLimit": 3,
   "platformAutomerge": true,
