@@ -7,7 +7,8 @@
     ":prHourlyLimitNone",
     ":timezone(Asia/Tokyo)",
     ":rebaseStalePrs",
-    ":disableDependencyDashboard"
+    ":disableDependencyDashboard",
+    ":automergePatch"
   ],
   "automerge": false,
   "baseBranches": [
@@ -35,12 +36,6 @@
     ]
   },
   "packageRules": [
-    {
-      "matchUpdateTypes": [
-        "patch"
-      ],
-      "automerge": true
-    },
     {
       "groupName": "github-actions",
       "addLabels": [
