@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-uvicorn = "==0.27.0.post1"
+uvicorn = "==0.27.1"
 fastapi = "==0.109.2"
 
 [dev-packages]
