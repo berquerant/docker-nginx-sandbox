@@ -106,7 +106,7 @@
   "customManagers": [
     {
       "fileMatch": [
-        "^Dockerfile$"
+        "^templates/Dockerfile$"
       ],
       "matchStrings": [
         "pipenv==(?<currentValue>\\d+\\.\\d+\\.\\d+)"
@@ -117,7 +117,7 @@
     },
     {
       "fileMatch": [
-        "^Dockerfile$"
+        "^templates/Dockerfile$"
       ],
       "matchStrings": [
         "FROM (?<depName>.*?):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)"
@@ -126,19 +126,10 @@
     },
     {
       "fileMatch": [
-        "^docker-compose.yml$"
+        "^docker-compose.yml.tpl$"
       ],
       "matchStrings": [
         "image (?<depName>.*?):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)"
-      ],
-      "datasourceTemplate": "docker"
-    },
-    {
-      "fileMatch": [
-        "^Makefile$"
-      ],
-      "matchStrings": [
-        ".*_IMAGE = (?<depName>.*?):(?<currentValue>.*?)"
       ],
       "datasourceTemplate": "docker"
     }
