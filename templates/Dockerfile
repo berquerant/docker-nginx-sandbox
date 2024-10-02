@@ -2,10 +2,9 @@ FROM python:3.12.6-bookworm@sha256:78409b7acdc408ff1dbdc936e246edcb07bba423581db
 
 WORKDIR /app/src
 
-COPY files/api/ ./api/
+COPY api/Pipfile api/Pipfile.lock ./
 
-RUN pip install --no-cache-dir pipenv==2024.0.3 \
-    && pipenv install
+RUN pip install --no-cache-dir pipenv==2024.0.3 && pipenv install
 
 EXPOSE 8000
 

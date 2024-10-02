@@ -23,7 +23,7 @@ services:
   api{{index}}:
     image: docker-nginx-sandbox-api:{{index}}
     ports:
-      - "{{api_port}}:80"
+      - "{{api_port}}:8000"
     volumes:
       - ./dist/{{index}}/files/api/main.py:/app/src/main.py:ro
   {%- endfor %}

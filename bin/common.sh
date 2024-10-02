@@ -2,8 +2,8 @@
 
 readonly image_name="docker-nginx-sandbox-api"
 readonly dockerfile="Dockerfile"
-readonly tmpd="tmpd"
+readonly distd="dist"
 
 gen_filed() {
-    echo "${tmpd}/${i}/files"
+    echo "${distd}/${i}/files"
 }

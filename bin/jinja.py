@@ -21,7 +21,9 @@ if __name__ == "__main__":
     import sys
     from argparse import ArgumentParser
 
-    p = ArgumentParser()
+    p = ArgumentParser(
+        description="Render jinja template from stdin",
+    )
     p.add_argument(
         "-n", action="store", type=int, default=1, help="number of instances"
     )

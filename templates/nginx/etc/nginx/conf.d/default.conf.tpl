@@ -17,7 +17,7 @@ server {
     #
     {%- for i in range(instance_num) %}
     location /api{{i}}/ {
-        proxy_pass http://api{{i}}:80/;
+        proxy_pass http://api{{i}}:8000/;
     }
     {%- endfor %}
     #
