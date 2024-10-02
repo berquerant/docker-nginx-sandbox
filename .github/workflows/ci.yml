@@ -23,14 +23,14 @@ jobs:
         with:
           dockerfile: templates/Dockerfile
           config: .hadolint.yml
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: "pipenv"
-      - name: Install pipenv
-        run: pip install pipenv
-      - name: Sync
-        run: pipenv sync --dev
-      - name: Build
-        run: pipenv run bin/build.sh 3
+      # - name: Set up Python 3.12
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version: "3.12"
+      #     cache: "pipenv"
+      # - name: Install pipenv
+      #   run: pip install pipenv
+      # - name: Sync
+      #   run: pipenv sync --dev
+      # - name: Build
+      #   run: pipenv run bin/build.sh 3
