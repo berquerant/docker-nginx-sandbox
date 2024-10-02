@@ -17,7 +17,11 @@ http {
                       '"$http_user_agent" "$http_x_forwarded_for"';
 
     access_log  /dev/stdout  main;
-    error_log   /dev/stderr   debug;
+    {%- if debug %}
+    error_log   /dev/stderr debug;
+    {%- else %}
+    error_log   /dev/stderr;
+    {%- endif %}
     rewrite_log on;
     sendfile        on;
     keepalive_timeout  65;

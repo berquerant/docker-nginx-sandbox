@@ -8,8 +8,14 @@ thisd="$(cd $(dirname $0); pwd)"
 readonly instance_num="${1:-1}"
 readonly nginx_port="${NGINX_PORT:-18000}"
 readonly api_port="${API_PORT:-19000}"
+readonly debug="$DEBUG"
+
+jinja_opt="-n ${instance_num} --nginx_port ${nginx_port} --api_port ${api_port}"
+if [ -n "$debug" ] ; then
+    jinja_opt="${jinja_opt} --debug"
+fi
 jinja_sh() {
-    "${thisd}/jinja.sh" -n "$instance_num" --nginx_port "$nginx_port" --api_port "$api_port"
+    "${thisd}/jinja.sh" $jinja_opt
 }
 
 build_n() {
