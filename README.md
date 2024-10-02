@@ -58,3 +58,9 @@ Change ports:
 ``` shell
 NGINX_PORT=xxx API_PORT=yyy bin/run.sh INSTANCE_NUM
 ```
+
+Enable nginx debug log:
+
+``` shell
+DEBUG=1 bin/run.sh INSTANCE_NUM
+```
