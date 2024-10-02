@@ -12,10 +12,22 @@ server {
         root   /usr/share/nginx/html;
     }
 
+    #
     # forward to FastAPI application
-    location /api/ {
-        proxy_pass http://api:8000/;
+    #
+    {%- for i in range(instance_num) %}
+    location /api{{i}}/ {
+        proxy_pass http://api{{i}}:80/;
     }
+    {%- endfor %}
+    #
+    # forward to nginx
+    #
+    {%- for i in range(instance_num) %}
+    location /nginx{{i}}/ {
+        proxy_pass http://nginx{{i}}:80/;
+    }
+    {%- endfor %}
 
     # forward to httpbin
     location /bin/ {
