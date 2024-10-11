@@ -33,6 +33,8 @@ build_n() {
 
 if [ -n "$CLEAN" ] ; then
     rm -rf "$distd"
+    docker ps -a | grep docker-nginx-sandbox | awk '{print $1}' | xargs docker rm
+    docker images | grep docker-nginx-sandbox | awk '{print $1":"$2}' | xargs docker rmi
 fi
 
 for i in $(seq $instance_num) ; do
