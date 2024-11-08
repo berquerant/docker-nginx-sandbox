@@ -4,7 +4,7 @@ WORKDIR /app/src
 
 COPY api/Pipfile api/Pipfile.lock ./
 
-RUN pip install --no-cache-dir pipenv==2024.3.1 && pipenv install
+RUN pip install --no-cache-dir pipenv==2024.4.0 && pipenv install
 
 EXPOSE 8000
 
