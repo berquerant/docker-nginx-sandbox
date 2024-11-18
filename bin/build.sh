@@ -24,7 +24,10 @@ build_n() {
     mkdir -p "$rootd"
     cp -rn templates/ "${rootd}/" || true
     find "$rootd" -name "*.tpl" -type f | while read line ; do
-         jinja_sh < "$line" > "${line%.tpl}"
+        dest="${line%.tpl}"
+        if [ -n "$CLEAN" ] || [ ! -f "$dest" ] ; then
+            jinja_sh < "$line" > "$dest"
+        fi
     done
     pushd "$rootd" > /dev/null
     docker build -t "${image_name}:${i}" -f "$dockerfile" .
