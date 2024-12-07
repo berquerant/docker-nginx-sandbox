@@ -8,6 +8,7 @@ ENV HOME=/root
 ENV PYENV_ROOT="${HOME}/.pyenv"
 ENV PATH="${PYENV_ROOT}/bin:${PATH}"
 
+# hadolint ignore=SC2016
 RUN git clone https://github.com/pyenv/pyenv.git "${HOME}/.pyenv" \
  && echo 'eval "$(pyenv init -)"' >> ~/.bashrc \
  && eval "$(pyenv init -)"
