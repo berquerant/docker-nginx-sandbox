@@ -12,7 +12,7 @@ ENV PATH="${PYENV_ROOT}/bin:${PATH}"
 RUN git clone https://github.com/pyenv/pyenv.git "${HOME}/.pyenv" \
  && echo 'eval "$(pyenv init -)"' >> ~/.bashrc \
  && eval "$(pyenv init -)"
-RUN pip install --no-cache-dir pipenv==2024.4.0 && pipenv install
+RUN pip install --no-cache-dir pipenv==2024.4.1 && pipenv install
 
 EXPOSE 8000
 
